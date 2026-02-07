@@ -8,26 +8,28 @@ buildCache {
 
 pluginManagement {
     repositories {
+        mavenLocal()
         gradlePluginPortal()
         google()
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/revanced/registry")
+            url = uri("https://maven.pkg.github.com/MorpheApp/registry")
             credentials {
                 username = providers.gradleProperty("gpr.user").getOrElse(System.getenv("GITHUB_ACTOR"))
                 password = providers.gradleProperty("gpr.key").getOrElse(System.getenv("GITHUB_TOKEN"))
             }
         }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
 plugins {
-    id("app.revanced.patches") version "1.0.0-dev.7"
+    id("app.morphe.patches") version "1.0.1"
 }
 
 settings {
     extensions {
-        defaultNamespace = "app.revanced.extension"
+        defaultNamespace = "app.morphe.extension"
 
         // Must resolve to an absolute path (not relative),
         // otherwise the extensions in subfolders will fail to find the proguard config.

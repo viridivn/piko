@@ -1,9 +1,9 @@
 package app.crimera.patches.twitter.misc.settings
 
-import app.revanced.patcher.patch.resourcePatch
-import app.revanced.patches.shared.misc.mapping.resourceMappingPatch
-import app.revanced.util.ResourceGroup
-import app.revanced.util.copyResources
+import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patches.shared.misc.mapping.resourceMappingPatch
+import app.morphe.util.ResourceGroup
+import app.morphe.util.copyResources
 import org.w3c.dom.Element
 import java.nio.file.Files
 
@@ -28,7 +28,7 @@ internal val settingsResourcePatch =
                 val parent = editor.getElementsByTagName("FrameLayout").item(1) as Element
 
                 val sideBtn =
-                    editor.createElement("app.revanced.extension.twitter.settings.widgets.PikoSettingsButton")
+                    editor.createElement("app.morphe.extension.twitter.settings.widgets.PikoSettingsButton")
                 sideBtn.setAttribute("android:text", "Piko")
                 sideBtn.setAttribute("android:textAllCaps", "false")
                 sideBtn.setAttribute("android:background", "?android:attr/selectableItemBackground")

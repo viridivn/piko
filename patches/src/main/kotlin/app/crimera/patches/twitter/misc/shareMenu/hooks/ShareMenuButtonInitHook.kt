@@ -2,12 +2,12 @@ package app.crimera.patches.twitter.misc.shareMenu.hooks
 
 import app.crimera.utils.Constants.UTILS_DESCRIPTOR
 import app.crimera.utils.instructionToString
-import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
-import app.revanced.patcher.extensions.InstructionExtensions.instructions
-import app.revanced.patcher.fingerprint
-import app.revanced.patcher.patch.BytecodePatchContext
-import app.revanced.patches.shared.misc.mapping.get
-import app.revanced.patches.shared.misc.mapping.resourceMappings
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.extensions.InstructionExtensions.instructions
+import app.morphe.patcher.fingerprint
+import app.morphe.patcher.patch.BytecodePatchContext
+import app.morphe.patches.shared.misc.mapping.get
+import app.morphe.patches.shared.misc.mapping.resourceMappings
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction21c
 

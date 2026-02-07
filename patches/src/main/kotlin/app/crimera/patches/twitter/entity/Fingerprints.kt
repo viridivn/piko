@@ -1,6 +1,6 @@
 package app.crimera.patches.twitter.entity
 
-import app.revanced.patcher.fingerprint
+import app.morphe.patcher.fingerprint
 
 internal fun entityMethodFingerprint(
     className: String,
@@ -8,7 +8,7 @@ internal fun entityMethodFingerprint(
 ) = fingerprint {
     custom { method, classDef ->
         method.name == methodName &&
-            classDef.type == "Lapp/revanced/extension/twitter/entity/$className;"
+            classDef.type == "Lapp/morphe/extension/twitter/entity/$className;"
     }
 }
 

@@ -1,6 +1,6 @@
 package app.crimera.patches.twitter.misc.settings
 
-import app.revanced.patcher.fingerprint
+import app.morphe.patcher.fingerprint
 
 internal val authorizeAppActivity =
     fingerprint {
@@ -20,7 +20,7 @@ internal val settingsFingerprint =
 internal val settingsStatusLoadFingerprint =
     fingerprint {
         custom { method, _ ->
-            method.definingClass.endsWith("Lapp/revanced/extension/twitter/settings/SettingsStatus;") &&
+            method.definingClass.endsWith("Lapp/morphe/extension/twitter/settings/SettingsStatus;") &&
                 method.name == "load"
         }
     }

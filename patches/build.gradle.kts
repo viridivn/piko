@@ -3,7 +3,7 @@ group = "crimera"
 patches {
     about {
         name = "Piko"
-        description = "ReVanced patches focused on Twitter/X"
+        description = "ReVanced patches focused on Twitter/X (Compatible with Morphe)"
         source = "git@github.com:crimera/piko.git"
         author = "crimera"
         contact = "contact@your.homepage"

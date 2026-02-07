@@ -4,12 +4,12 @@ import app.crimera.patches.twitter.misc.settings.settingsPatch
 import app.crimera.patches.twitter.misc.settings.settingsStatusLoadFingerprint
 import app.crimera.utils.Constants.PREF_DESCRIPTOR
 import app.crimera.utils.enableSettings
-import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
-import app.revanced.patcher.extensions.InstructionExtensions.getInstruction
-import app.revanced.patcher.extensions.InstructionExtensions.instructions
-import app.revanced.patcher.fingerprint
-import app.revanced.patcher.patch.bytecodePatch
-import app.revanced.util.getReference
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.instructions
+import app.morphe.patcher.fingerprint
+import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.getReference
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
@@ -45,7 +45,7 @@ val defaultReplySortingPatch =
                 replySortingInvokeClassFinderFingerprint.classDef.fields
                     .first()
                     .type
-            val method = classBy { it.type == replySortingInvokeClass }!!.mutableClass.methods.first()
+            val method = mutableClassDefBy(classDefBy(replySortingInvokeClass)).methods.first()
             val instructions = method.instructions
             val loc = instructions.first { it.opcode == Opcode.SGET_OBJECT }.location.index
             val rClass = (method.getInstruction<ReferenceInstruction>(loc).reference as FieldReference).definingClass

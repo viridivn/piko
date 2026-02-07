@@ -1,6 +1,6 @@
 package app.crimera.patches.twitter.misc.extension
 
-import app.revanced.patches.shared.misc.extension.extensionHook
+import app.morphe.patches.shared.misc.extension.extensionHook
 
 internal val initHook =
     extensionHook {

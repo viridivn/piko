@@ -4,9 +4,9 @@ import app.crimera.patches.twitter.misc.settings.settingsPatch
 import app.crimera.patches.twitter.misc.settings.settingsStatusLoadFingerprint
 import app.crimera.utils.Constants
 import app.crimera.utils.enableSettings
-import app.revanced.patcher.extensions.InstructionExtensions.addInstruction
-import app.revanced.patcher.fingerprint
-import app.revanced.patcher.patch.bytecodePatch
+import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
+import app.morphe.patcher.fingerprint
+import app.morphe.patcher.patch.bytecodePatch
 
 private val mainActivityFingerprint =
     fingerprint {
@@ -26,9 +26,9 @@ val changelogsPatch =
 
         execute {
 
-            val superClassName = mainActivityFingerprint.classDef.superclass
+            val superClassName = mainActivityFingerprint.classDef.superclass!!
 
-            val superclassOnCreateMethod = proxy(classes.first { it.type == superClassName }).mutableClass.methods.first { it.name == "onCreate" }
+            val superclassOnCreateMethod = mutableClassDefBy(classDefBy(superClassName)).methods.first { it.name == "onCreate" }
 
             superclassOnCreateMethod.addInstruction(
                 0,
